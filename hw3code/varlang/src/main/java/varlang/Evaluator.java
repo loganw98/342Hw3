@@ -17,11 +17,11 @@ import varlang.Env.EmptyEnv;
 import varlang.Env.ExtendEnv;
 
 public class Evaluator implements Visitor<Value> {
+	private Env initEnv = new EmptyEnv();
 	
 	Value valueOf(Program p) {
-		Env env = new EmptyEnv();
 		// Value of a program in this language is the value of the expression
-		return (Value) p.accept(this, env);
+		return (Value) p.accept(this, initEnv);
 	}
 	
 	@Override
@@ -65,7 +65,10 @@ public class Evaluator implements Visitor<Value> {
 
 	@Override
 	public Value visit(Program p, Env env) {
-		return (Value) p.e().accept(this, env);
+		for(DefDeclare d : p.get_defDeclares()) {
+			d.accept(this, initEnv);
+		}
+		return (Value) p.e().accept(this, initEnv);
 	}
 
 	@Override
@@ -92,18 +95,44 @@ public class Evaluator implements Visitor<Value> {
 		List<Exp> value_exps = e.value_exps();
 		List<Value> values = new ArrayList<Value>(value_exps.size());
 
-		Env new_env = env;
+		Env new_env = initEnv;
 		for(int i = 0; i < names.size(); i++){
 			values.add((Value) value_exps.get(i).accept(this, new_env));
-			new_env = new ExtendEnv(new_env, names.get(i), values.get(i));
+			initEnv = new ExtendEnv(new_env, names.get(i), values.get(i));
 		}
 
-		return (Value) e.body().accept(this, new_env);		
+		return (Value) e.body().accept(this, initEnv);
+	}
+	@Override
+	public Value visit(EncLetExp e, Env env){
+		List<String> names = e._names;
+		List<Exp> value_exps = e._value_exp;
+		double key = e._key;
+		List<Value> values = new ArrayList<>(value_exps.size());
+		Env new_env = initEnv;
+		for(int i = 0; i < names.size(); i++){
+			NumVal val = (NumVal) value_exps.get(i).accept(this, new_env);
+			val.setV(key);
+			values.add((Value) val);
+		}
+		return (Value) e._body.accept(this, new_env);
 	}
 
 	@Override
-	public Value visit(DefExp e, Env env) {
-		return null;
+	public Value visit(DecExp d, Env env) {
+		NumVal temp = (NumVal) d._e.accept(this, env);
+		temp.setV(-d._number);
+		return temp;
 	}
+
+	@Override
+	public Value visit(DefDeclare d, Env env) {
+	    String name = d.name();
+	    Exp value = d.value();
+	    Value val = (Value) value.accept(this, initEnv);
+	    initEnv = new Env.GlobalEnv(initEnv, name, val);
+		return (Value) d.accept(this, initEnv);
+	}
+
 
 }

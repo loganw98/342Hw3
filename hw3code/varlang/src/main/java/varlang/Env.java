@@ -1,5 +1,7 @@
 package varlang;
 
+import java.util.ArrayList;
+
 /**
  * Representation of an environment, which maps variables to values.
  * 
@@ -15,7 +17,22 @@ public interface Env {
 			super(message);
 		}
 	}
-	
+	static public class GlobalEnv implements Env{
+		private Env _saved_env;
+		private String _var;
+		private Value _val;
+		public GlobalEnv(Env saved_env, String var, Value val){
+			_var = var;
+			_val = val;
+		}
+
+		@Override
+		public Value get(String search_var) {
+			if(_var.equals(search_var))
+				return _val;
+			return _saved_env.get(search_var);
+		}
+	}
 	static public class EmptyEnv implements Env {
 		public Value get (String search_var) {
 			throw new LookupException("No binding found for name: " + search_var);

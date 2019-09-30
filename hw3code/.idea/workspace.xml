@@ -1,7 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22900837-dd88-47ed-948b-a1ed59e7a4c7" name="Default Changelist" comment="" />
+    <list default="true" id="22900837-dd88-47ed-948b-a1ed59e7a4c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grammars/ArithLang.g" beforeDir="false" afterPath="$PROJECT_DIR$/grammars/ArithLang.g" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$ASTNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$ASTNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$AddExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$AddExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$CompoundArithExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$CompoundArithExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$DivExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$DivExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$Exp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$Exp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$LetExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$LetExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$MultExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$MultExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$NumExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$NumExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$SubExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$SubExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$VarExp.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$VarExp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST$Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/AST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env$EmptyEnv.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env$EmptyEnv.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env$ExtendEnv.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env$ExtendEnv.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env$LookupException.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env$LookupException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Env.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Evaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Evaluator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Printer$Formatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Printer$Formatter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Value$NumVal.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/Value$NumVal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangLexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangLexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$AddexpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$AddexpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$DivexpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$DivexpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$ExpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$ExpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$LetexpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$LetexpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$MultexpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$MultexpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$NumexpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$NumexpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$ProgramContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$ProgramContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$SubexpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$SubexpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$VarexpContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser$VarexpContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/classes/java/main/varlang/parser/VarLangParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLang.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLang.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLangLexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLangLexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLangLexer.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLangLexer.tokens" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLangParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/build/generated-src/antlr/main/varlang/parser/VarLangParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/scripts/varlang" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/scripts/varlang.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/src/main/antlr/varlang/parser/VarLang.g" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/src/main/antlr/varlang/parser/VarLang.g" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/src/main/java/varlang/AST.java" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/src/main/java/varlang/AST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/src/main/java/varlang/Env.java" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/src/main/java/varlang/Env.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/src/main/java/varlang/Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/src/main/java/varlang/Evaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/src/main/java/varlang/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/src/main/java/varlang/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/varlang/src/main/java/varlang/Value.java" beforeDir="false" afterPath="$PROJECT_DIR$/varlang/src/main/java/varlang/Value.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +66,13 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1RRWTKQVb2Y3jClpUX8XSHk9jog" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -65,10 +123,28 @@
       <workItem from="1569701509359" duration="31000" />
       <workItem from="1569704500913" duration="1906000" />
       <workItem from="1569739790312" duration="4987000" />
+      <workItem from="1569819915332" duration="7206000" />
+      <workItem from="1569830128664" duration="1986000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.g" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

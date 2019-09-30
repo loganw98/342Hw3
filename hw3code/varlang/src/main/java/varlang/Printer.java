@@ -53,33 +53,38 @@ public class Printer {
 		}
 		
 		public String visit(AST.LetExp e, Env env) {
-			String result = "(let (";
-			List<String> names = e.names();
-			List<AST.Exp> value_exps = e.value_exps();
-			int num_decls = names.size();
-			for (int i = 0; i < num_decls ; i++) {
-				result += " (";
-				result += names.get(i) + " ";
-				result += value_exps.get(i).accept(this, env) + ")";
-			}
-			result += ") ";
-			result += e.body().accept(this, env) + " ";
-			return result + ")";
-		}
+            String result = "(let (";
+            List<String> names = e.names();
+            List<AST.Exp> value_exps = e.value_exps();
+            int num_decls = names.size();
+            for (int i = 0; i < num_decls; i++) {
+                result += " (";
+                result += names.get(i) + " ";
+                result += value_exps.get(i).accept(this, env) + ")";
+            }
+            result += ") ";
+            result += e.body().accept(this, env) + " ";
+            return result + ")";
+        }
 
 		@Override
-		public String visit(AST.DefExp e, Env env) {
+		public String visit(AST.DefDeclare d, Env env) {
 			String result = "";
-			List<String> var = e._global_vars;
-			List<AST.Exp> global_exps = e._global_exp;
-			int num_decls = var.size();
-			for(int i = 0; i < num_decls; i++){
-				result += "(def ";
-				result += var.get(i);
-				result += global_exps.get(i).accept(this, env) + ")";
-			}
+			String name = d.name();
+			AST.Exp value = d.value();
+			result = result + "(define " + name + value;
 			return result;
 		}
 
-	}
+        @Override
+        public String visit(AST.EncLetExp e, Env env) {
+            return null;
+        }
+
+        @Override
+        public String visit(AST.DecExp d, Env env) {
+            return null;
+        }
+
+    }
 }

@@ -1,5 +1,6 @@
 package varlang;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,17 +16,45 @@ public interface AST {
 	public static abstract class ASTNode implements AST {
 		public abstract Object accept(Visitor visitor, Env env);
 	}
+
+	public static class DefDeclare extends ASTNode {
+		String _name;
+		Exp _value;
+
+		public DefDeclare(String name, Exp value){
+			_name = name;
+			_value = value;
+		}
+
+		public String name() {
+			return _name;
+		}
+
+		public Exp value() {
+			return _value;
+		}
+
+		@Override
+		public Object accept(Visitor visitor, Env env) {
+			return visitor.visit(this, env);
+		}
+	}
 	public static class Program extends ASTNode {
 		Exp _e;
+		ArrayList<DefDeclare> _defDeclares;
 
-		public Program(Exp e) {
+		public Program(ArrayList<DefDeclare> declares, Exp e) {
 			_e = e;
+			_defDeclares = declares;
 		}
 
 		public Exp e() {
 			return _e;
 		}
-		
+		public ArrayList<DefDeclare> get_defDeclares() {
+			return _defDeclares;
+		}
+
 		public Object accept(Visitor visitor, Env env) {
 			return visitor.visit(this, env);
 		}
@@ -233,24 +262,42 @@ public interface AST {
 		public Exp body() { return _body; }
 
 	}
-	public static class DefExp extends Exp {
-		List<String> _global_vars;
-		List<Exp> _global_exp;
-		Exp _body;
+	public static class EncLetExp extends Exp {
+	    List<String> _names;
+	    List<Exp> _value_exp;
+	    Exp _body;
+	    double _key;
 
-		public DefExp(List<String> global_vars, List<Exp> global_exp, Exp body){
-			_global_vars = global_vars;
-			_global_exp = global_exp;
-			_body = body;
+	    public EncLetExp(List<String> names, List<Exp> value_exps, Exp body, double key) {
+	        _names = names;
+	        _value_exp = value_exps;
+	        _body = body;
+	        _key = key;
+
+        }
+
+		@Override
+		public Object accept(Visitor visitor, Env env) {
+			return visitor.visit(this, env);
 		}
-		public Object accept(Visitor visitor, Env env) {return visitor.visit(this, env); }
-
-		public List<String> get_global_vars() {return _global_vars;}
-		public List<Exp> get_global_exp() {return _global_exp; }
-		public Exp body() { return _body; }
-
 	}
-	
+
+	public static class DecExp extends Exp {
+		double _number;
+		Exp _e;
+
+		public DecExp(double number, Exp e){
+			_e = e;
+			_number = number;
+		}
+		@Override
+		public Object accept(Visitor visitor, Env env){
+			return visitor.visit(this, env);
+		}
+	}
+
+
+
 	public interface Visitor <T> {
 		// This interface should contain a signature for each concrete AST node.
 		public T visit(AST.AddExp e, Env env);
@@ -261,6 +308,9 @@ public interface AST {
 		public T visit(AST.SubExp e, Env env);
 		public T visit(AST.VarExp e, Env env);
 		public T visit(AST.LetExp e, Env env); // New for the varlang
-		public T visit(AST.DefExp e, Env env);
+		public T visit(AST.DefDeclare d, Env env);
+		public T visit(AST.EncLetExp e, Env env);
+		public T visit(AST.DecExp d, Env env);
+
 	}	
 }

@@ -2,8 +2,12 @@ grammar ArithLang;
 
  // Grammar of this Programming Language
  //  - grammar rules start with lowercase
- program returns [Program ast] : 
-		e=exp { $ast = new Program($e.ast); }
+ program returns [Program ast]
+        locals [ArrayList<DefDeclare> def, Exp expression]:
+        { $def = new ArrayList<DefDeclare>(); }
+        ( d=defdeclare {$def.add($d.ast); } )*
+        ( e=exp {$expression=$e.ast; })?
+        { $ast = new Program($def, $expression); }
 		;
 
  exp returns [Exp ast]: 
@@ -63,6 +67,8 @@ grammar ArithLang;
  
  Define : 'define' ;
  Let : 'let' ;
+ Lete: 'lete' ;
+ dec: 'dec' ;
  Dot : '.' ;
 
  Number : DIGIT+ ;

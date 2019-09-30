@@ -5,9 +5,14 @@ import ArithLang; //Import all rules from Arithlang grammar.
  // New elements in the Grammar of this Programming Language
  //  - grammar rules start with lowercase
 
+ defdeclare returns [DefDeclare ast]:
+         '(' Define id=Identifier e=exp { $ast = new DefDeclare($id.text, $e.ast); } ')'
+        ;
+
  exp returns [Exp ast]:
-          d=defexp { $ast = $d.ast; }
-		  v=varexp { $ast = $v.ast; }
+        el=encletexp { $ast = $el.ast; }
+        | q=decexp { $ast = $q.ast; }
+		| v=varexp { $ast = $v.ast; }
 		| n=numexp { $ast = $n.ast; }
         | a=addexp { $ast = $a.ast; }
         | s=subexp { $ast = $s.ast; }
@@ -16,11 +21,19 @@ import ArithLang; //Import all rules from Arithlang grammar.
         | l=letexp { $ast = $l.ast; }
         ;
 
- defexp returns [DefExp ast]:
-        locals [ArrayList<String> global_vars, ArrayList<Exp> global_exps]
-        @init { $global_vars = new ArrayList<String>(); $global_exps = new ArrayList<Exp>(); } :
-        '(' Define id=Identifier e=exp
-            ')' {$ast = new LetExp($global_vars, $global_exps,
+ encletexp returns [EncLetExp ast]
+        locals [ArrayList<String> names, ArrayList<Exp> value_exps, double key]:
+        { $names = new ArrayList<String>(); $value_exps = new ArrayList<Exp>(); }
+        '(' Lete n=Number
+            '(' ( '(' id=Identifier e=exp ')' { $names.add($id.text); $value_exps.add($e.ast);
+            $key = Integer.parseInt($n.text); } )+ ')'
+            body=exp
+            ')' { $ast = new EncLetExp($names, $value_exps, $body.ast, $key); }
+        ;
+
+ decexp returns [DecExp ast]:
+        '(' dec n=Number e=exp
+         { $ast = new DecExp(Integer.parseInt($n.text), $e.ast); } ')'
         ;
 
  varexp returns [VarExp ast]: 
